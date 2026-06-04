@@ -1,194 +1,97 @@
-\# Placement Prediction System
-
-
+# Placement Prediction System
 
 A Machine Learning web application that predicts whether a student is likely to be placed based on academic performance and educational background.
 
-
-
-\## Overview
-
-
+## Overview
 
 This project uses a trained Machine Learning model to analyze student academic details and predict placement outcomes. The model is deployed using FastAPI as the backend API and Streamlit as the frontend interface.
 
+## Features
 
+- Student placement prediction
+- FastAPI REST API
+- Streamlit web interface
+- Data preprocessing using encoding and scaling
+- Trained Scikit-Learn model
+- Real-time predictions
 
-\## Features
+## Tech Stack
 
+- Python
+- Scikit-Learn
+- Pandas
+- NumPy
+- FastAPI
+- Streamlit
+- Joblib
 
-
-\- Student placement prediction
-
-\- FastAPI REST API
-
-\- Streamlit web interface
-
-\- Data preprocessing using encoding and scaling
-
-\- Trained Scikit-Learn model
-
-\- Real-time predictions
-
-
-
-\## Tech Stack
-
-
-
-\- Python
-
-\- Scikit-Learn
-
-\- Pandas
-
-\- NumPy
-
-\- FastAPI
-
-\- Streamlit
-
-\- Joblib
-
-
-
-\## Project Structure
-
-
+## Project Structure
 
 ```text
-
-dummy\_placement\_predictor/
-
+dummy_placement_predictor/
 │
-
 ├── first.py
-
-├── first\_api.py
-
-├── model\_new
-
-├── scaler\_new
-
-├── encoder\_new
-
+├── first_api.py
+├── model_new
+├── scaler_new
+├── encoder_new
 ├── requirements.txt
-
-├── placement\_prediction.ipynb
-
+├── placement_prediction.ipynb
 └── README.md
-
 ```
 
-
-
-\## Architecture
-
-
+## Architecture
 
 ```text
-
 User
-
-&#x20;│
-
-&#x20;▼
-
+ │
+ ▼
 Streamlit UI
-
-&#x20;│
-
-&#x20;▼
-
+ │
+ ▼
 FastAPI Backend
-
-&#x20;│
-
-&#x20;▼
-
+ │
+ ▼
 Preprocessing Pipeline
-
-&#x20;│
-
-&#x20;├── Encoding
-
-&#x20;│
-
-&#x20;└── Scaling
-
-&#x20;│
-
-&#x20;▼
-
+ │
+ ├── Encoding
+ │
+ └── Scaling
+ │
+ ▼
 Trained ML Model
-
-&#x20;│
-
-&#x20;▼
-
+ │
+ ▼
 Prediction
-
-&#x20;│
-
-&#x20;▼
-
+ │
+ ▼
 User
-
 ```
 
-
-
-\## Running the FastAPI Server
-
-
+## Running the FastAPI Server
 
 ```bash
-
 uvicorn api:app --reload
-
 ```
 
-
-
-\## Running the Streamlit Application
-
-
+## Running the Streamlit Application
 
 ```bash
-
 streamlit run app.py
-
 ```
 
+## Sample Prediction Inputs
 
+- Gender
+- SSC Percentage
+- SSC Board
+- HSC Percentage
+- HSC Board
+- HSC Stream
+- Degree Percentage
+- Degree Type
 
-\## Sample Prediction Inputs
-
-
-
-\- Gender
-
-\- Class 10 Percentage
-
-\- Class 10 Board
-
-\- Class 12 Percentage
-
-\- Class 12 Board
-
-\- Class 12 Stream
-
-\- Degree Percentage
-
-\- Degree Type
-
-
-
-\## Author
-
-
+## Author
 
 Bhimaraju Sai Koundinya
-
 B.Tech CSE AI/ML, KIIT University
-
