@@ -1,0 +1,11 @@
+REQUIREMENTS
+
+fastapi
+uvicorn
+streamlit
+pandas
+numpy
+scikit-learn
+joblib
+requests
+pydantic
