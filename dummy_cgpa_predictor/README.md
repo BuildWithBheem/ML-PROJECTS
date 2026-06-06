@@ -18,8 +18,9 @@ A Machine Learning project that predicts a student's CGPA using academic habits 
 | Model | R² Score |
 |---------|---------|
 | Polynomial Regression (Degree 2) | 0.93 |
+| Linear Regression (Multiple) | 0.90
 | Random Forest Regressor | 0.85 |
-| Decision Tree Regressor | 0.85 |
+| Decision Tree Regressor | 0.84 |
 
 Polynomial Regression achieved the highest performance and was selected for deployment.
 
@@ -39,3 +40,6 @@ Polynomial Regression achieved the highest performance and was selected for depl
 ## Start the Streamlit Frontend
 
 - streamlit run cgpa_frontend.py
+
+## Author
+- Bhimaraju Sai Koundinya CSE AI/ML KIIT University
