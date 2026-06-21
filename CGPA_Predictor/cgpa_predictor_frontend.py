@@ -82,7 +82,7 @@ if st.button("Predict CGPA"):
     "semester_number": sem_no
     }
     response = requests.post(
-    "http://127.0.0.1:8000/cgpa-predict",
+    "https://cgpa-predictor-l520.onrender.com/predict",
     json = data)
     prediction = response.json()["CGPA Predicted"]
     with st.spinner("Loading, please wait.."):
