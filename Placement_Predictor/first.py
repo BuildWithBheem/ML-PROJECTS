@@ -27,7 +27,7 @@ if st.button("Predict"):
     }
 
     response_api = requests.post(
-        "http://127.0.0.1:8000/predict",
+        "https://placement-predictor-0pne.onrender.com/predict",
         json=data #Converts the data input to json format
     )
     prediction = response_api.json()["result"]
