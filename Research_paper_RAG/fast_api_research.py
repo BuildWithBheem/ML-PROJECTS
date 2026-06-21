@@ -26,9 +26,15 @@ def Query(User_query : Research_Query):
     paper1 = df.iloc[index[0,0]]
     paper2 = df.iloc[index[0,1]]
     paper3 = df.iloc[index[0,2]]
-    prompt = f"answer the user {User_query.Query} concisely, with the context of {paper1},{paper2},{paper3}"
+    prompt = f"""answer the user {User_query.Query} within 50 words, with the context of {paper1},{paper2},{paper3}
+                You may only answer using the retrieved papers.
+                If the retrieved papers do not contain enough information,
+                state that the information is unavailable in the dataset.
+                
+                Do not use outside knowledge."""
+    
     ai_summary = ollama.chat(
-    model = 'qwen3:4b',
+    model = 'qwen2.5:1.5b',
     messages= [
         {"role":"system", "content":"You are a research paper assistant, dont use Markdown format...just plain text"},
         {"role":"user","content":prompt}

@@ -13,7 +13,7 @@ import re
 
 corpus = []
 
-for i in range(0,5000):
+for i in range(0,20000):
   paper = re.sub('[^a-zA-Z]',' ', df.iloc[i,-1])
   paper = paper.lower()
   paper = paper.split()
@@ -23,7 +23,7 @@ for i in range(0,5000):
 
 from sentence_transformers import SentenceTransformer
 papers = SentenceTransformer('all-MiniLM-L6-v2')
-x = papers.encode(corpus, batch_size = 100, show_progress_bar = True)
+x = papers.encode(corpus, batch_size = 1000, show_progress_bar = True)
 
 x.shape
 
@@ -57,5 +57,5 @@ Distances, indexes = faiss_index.search(query_embed,10) # Top-10 retrievals on s
 import joblib as jb
 
 faiss.write_index(faiss_index,"Faiss_indexes")
-df = df.iloc[:5000]
+df = df.iloc[:20000]
 jb.dump(df,"Papers")

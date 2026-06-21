@@ -3,7 +3,11 @@ import requests
 
 FASTAPI_URL = "http://localhost:8000"
 
-st.set_page_config(page_title="Research Assistant", page_icon="🔍", layout="wide")
+st.set_page_config(
+    page_title="Research Assistant",
+    layout="wide",
+    initial_sidebar_state="expanded"
+)
 
 st.markdown("""
 <style>
@@ -29,7 +33,7 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 st.title("Research Assistant")
-st.caption("Semantic search over 5,000 ArXiv papers, powered by FAISS + Ollama")
+st.caption("Semantic search over 20,000 ArXiv papers, powered by FAISS + Ollama")
 
 if "search_results" not in st.session_state:
     st.session_state.search_results = []
@@ -62,7 +66,7 @@ if st.session_state.search_results:
             st.markdown(f"<p style='color:#9ca3af; font-size:13px; line-height:1.6'>{abstract}</p>", unsafe_allow_html=True)
 
 with st.sidebar:
-    st.header("Chat with AI")
+    st.sidebar.title("🤖 Chat with AI")
     st.caption("Uses top 3 retrieved papers as context")
     st.divider()
 
